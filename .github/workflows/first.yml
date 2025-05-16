@@ -1,5 +1,5 @@
 name: GitHub Actions EVs demo
-run-name: ${{ github.actor }} is testing out GitHub Actions EVs on ${{ runner.os }} machine 🚀
+run-name: ${{ github.actor }} is testing out GitHub Actions EVs🚀
 on:
   workflow_dispatch:
   push:
@@ -10,6 +10,8 @@ jobs:
       USERNAME: "job01 user"
       URL: "job01_URL"
     steps:
+      - name: Print runner os
+        run: echo running on ${{ runner.os }}
       - name: Print the USERNAME envs
         run: | 
           echo $USERNAME
