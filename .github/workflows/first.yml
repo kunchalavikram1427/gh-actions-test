@@ -4,10 +4,28 @@ on:
   workflow_dispatch:
   push:
 env:
-  USERNAME: "www"
-  URL: "bit.ly"
+  USERNAME: "global_user"
+  URL: "global_url"
 jobs:
-  Explore-GitHub-Actions:
+  job01:
+    runs-on: ubuntu-latest
+    env:
+      USERNAME: "job01 user"
+      URL: "job01_URL"
+    steps:
+      - name: Print the USERNAME envs
+        run: | 
+          echo $USERNAME
+          echo $URL
+          echo ${{ env.USERNAME }}
+      - name: Print the USERNAME envs in step 2
+        env:
+          USERNAME: "job01 step 2 user"
+        run: | 
+          echo $USERNAME
+          echo $URL
+          echo ${{ env.USERNAME }}
+  job02:
     runs-on: ubuntu-latest
     steps:
       - name: Print the USERNAME envs
