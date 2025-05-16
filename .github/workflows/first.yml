@@ -3,9 +3,6 @@ run-name: ${{ github.actor }} is testing out GitHub Actions EVs 🚀
 on:
   workflow_dispatch:
   push:
-env:
-  USERNAME: "global_user"
-  URL: "global_url"
 jobs:
   job01:
     runs-on: ubuntu-latest
